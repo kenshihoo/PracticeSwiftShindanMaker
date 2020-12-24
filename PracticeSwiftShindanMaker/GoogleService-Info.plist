@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>887975586267-sq6kcg9euj2gj82004t79d4uj4qdvb77.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.887975586267-sq6kcg9euj2gj82004t79d4uj4qdvb77</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCe-SqJO_8Cq6NKEEXjizPu4xKDzwu2XKc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>887975586267</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>kenshihoo.PracticeSwiftShindanMaker</string>
+	<key>PROJECT_ID</key>
+	<string>practiceswiftshindanmaker</string>
+	<key>STORAGE_BUCKET</key>
+	<string>practiceswiftshindanmaker.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:887975586267:ios:b476ee05899cfa5b519ffe</string>
+</dict>
+</plist>

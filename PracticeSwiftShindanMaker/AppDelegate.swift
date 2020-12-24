@@ -6,6 +6,8 @@
 //
 
 import UIKit
+//Firebaseを使うためにインポート
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //FirebaseApp 共有インスタンスを構成
+        FirebaseApp.configure()
+            //詳細はこのサイトからhttps://firebase.google.com/docs/ios/setup?hl=ja#swift_1
+        
         // Override point for customization after application launch.
         return true
     }

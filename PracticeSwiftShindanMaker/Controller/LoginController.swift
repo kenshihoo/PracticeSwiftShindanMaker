@@ -19,13 +19,7 @@ class LoginController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Twitterログインの機能を使えるようにした(https://qiita.com/TakahikoKawasaki/items/e37caf50776e00e733be)
-        self.provider = OAuthProvider(providerID: TwitterAuthProviderID)
-        //表示言語を日本語化
-        provider?.customParameters = [ "loang":"ja"]
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
@@ -39,16 +33,19 @@ class LoginController: UIViewController {
         //Twitterログインの機能を使えるようにした(https://qiita.com/TakahikoKawasaki/items/e37caf50776e00e733be)
         self.provider = OAuthProvider(providerID: TwitterAuthProviderID)
         
-        //強制ログインを許可
-        provider?.customParameters = [ "force_login":"true"]
+            //ログイン機能の表示言語を日本語化
+            provider?.customParameters = [ "loang":"ja"]
+            //強制ログインを許可
+            provider?.customParameters = [ "force_login":"true"]
         
         //ログインの設定
         provider?.getCredentialWith(nil, completion: {(credential,error)in
-                //ActivityIndicatorView(レーディング時のアニメーション)の設定をする
+            //ActivityIndicatorView(レーディング時のアニメーション)の設定をする(https://github.com/ninjaprox/NVActivityIndicatorView)
             let activityView = NVActivityIndicatorView(frame: self.view.bounds,type: .lineSpinFadeLoader,color:.gray,padding: .none)
-                    //activityViewをviewに追加
+            
+                //activityViewをviewに追加
                 self.view.addSubview(activityView)
-                    //activityViewのアニメーションを開始
+                //activityViewのアニメーションを開始
                 activityView.startAnimating()
             
                 //ログインの処理をする
@@ -61,7 +58,16 @@ class LoginController: UIViewController {
                     activityView.stopAnimating()
                     
                 //画面遷移させる
-                    var im = 1
+                    //ViewControllerをインスタンス化
+                    let viewVC = self.storyboard?.instantiateViewController(identifier: "ViewVCId") as! ViewController
+                    
+                    //ViewController内にあるインスタンスuserNameを初期化(ログイン処理時に獲得したdisplayNameを入れる)
+                    viewVC.userName = (result?.user.displayName)!
+                    
+                    //画面遷移
+                    self.navigationController?.pushViewController(viewVC, animated: true)
+                    
+        
             }
         })
     }

@@ -44,7 +44,7 @@
         <!--View Controller-->
         <scene sceneID="1m9-gh-ZSv">
             <objects>
-                <viewController id="u9u-oT-5ho" customClass="ViewController" customModule="PracticeSwiftShindanMaker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewVCId" id="u9u-oT-5ho" customClass="ViewController" customModule="PracticeSwiftShindanMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bBe-x3-f2n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,6 +105,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Qpj-SG-Mup"/>
+                    <connections>
+                        <outlet property="meigenLabel" destination="kcU-Ul-wtE" id="Xvj-yH-Wav"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1mN-Ig-55f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -61,7 +61,7 @@ class LoginController: UIViewController {
                     activityView.stopAnimating()
                     
                 //画面遷移させる
-                    
+                    var im = 1
             }
         })
     }

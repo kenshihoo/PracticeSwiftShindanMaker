@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3CA1C2BA2B44F8037279A707 /* Pods_PracticeSwiftShindanMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE15CA4C4B7F13B593BC796B /* Pods_PracticeSwiftShindanMaker.framework */; };
+		E341B20B25A0CD340061F0ED /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E341B20A25A0CD340061F0ED /* FeedViewController.swift */; };
+		E3BFC7FF25A15DD10066579C /* Feeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BFC7FE25A15DD10066579C /* Feeds.swift */; };
+		E3BFC80425A160C20066579C /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BFC80225A160C20066579C /* FeedCell.swift */; };
+		E3BFC80525A160C20066579C /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3BFC80325A160C20066579C /* FeedCell.xib */; };
 		E3E7BFD425920D580062C8ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E7BFD325920D580062C8ED /* AppDelegate.swift */; };
 		E3E7BFD625920D580062C8ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E7BFD525920D580062C8ED /* SceneDelegate.swift */; };
 		E3E7BFD825920D580062C8ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E7BFD725920D580062C8ED /* ViewController.swift */; };
@@ -21,6 +25,10 @@
 /* Begin PBXFileReference section */
 		13A670DD170C5920DE6B6977 /* Pods-PracticeSwiftShindanMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PracticeSwiftShindanMaker.release.xcconfig"; path = "Target Support Files/Pods-PracticeSwiftShindanMaker/Pods-PracticeSwiftShindanMaker.release.xcconfig"; sourceTree = "<group>"; };
 		AE15CA4C4B7F13B593BC796B /* Pods_PracticeSwiftShindanMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PracticeSwiftShindanMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E341B20A25A0CD340061F0ED /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		E3BFC7FE25A15DD10066579C /* Feeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeds.swift; sourceTree = "<group>"; };
+		E3BFC80225A160C20066579C /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		E3BFC80325A160C20066579C /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		E3E7BFD025920D580062C8ED /* PracticeSwiftShindanMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeSwiftShindanMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E7BFD325920D580062C8ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3E7BFD525920D580062C8ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +71,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E3BFC7FD25A15DA70066579C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E3BFC7FE25A15DD10066579C /* Feeds.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E3BFC80125A1608B0066579C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E3BFC80225A160C20066579C /* FeedCell.swift */,
+				E3BFC80325A160C20066579C /* FeedCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E3E7BFC725920D580062C8ED = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +111,8 @@
 			children = (
 				E3E7BFD325920D580062C8ED /* AppDelegate.swift */,
 				E3E7BFD525920D580062C8ED /* SceneDelegate.swift */,
+				E3BFC80125A1608B0066579C /* View */,
+				E3BFC7FD25A15DA70066579C /* Model */,
 				E3E7C001259239570062C8ED /* Controller */,
 				E3E7BFDC25920D5B0062C8ED /* Assets.xcassets */,
 				E3E7BFDE25920D5B0062C8ED /* LaunchScreen.storyboard */,
@@ -99,8 +126,9 @@
 		E3E7C001259239570062C8ED /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E3E7BFD725920D580062C8ED /* ViewController.swift */,
 				E3E7C00825923AB70062C8ED /* LoginController.swift */,
+				E3E7BFD725920D580062C8ED /* ViewController.swift */,
+				E341B20A25A0CD340061F0ED /* FeedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,6 +196,7 @@
 				E3E7C00C25923D860062C8ED /* GoogleService-Info.plist in Resources */,
 				E3E7BFDD25920D5B0062C8ED /* Assets.xcassets in Resources */,
 				E3E7BFDB25920D580062C8ED /* Main.storyboard in Resources */,
+				E3BFC80525A160C20066579C /* FeedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,10 +249,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3BFC80425A160C20066579C /* FeedCell.swift in Sources */,
 				E3E7BFD825920D580062C8ED /* ViewController.swift in Sources */,
 				E3E7C00925923AB70062C8ED /* LoginController.swift in Sources */,
+				E341B20B25A0CD340061F0ED /* FeedViewController.swift in Sources */,
 				E3E7BFD425920D580062C8ED /* AppDelegate.swift in Sources */,
 				E3E7BFD625920D580062C8ED /* SceneDelegate.swift in Sources */,
+				E3BFC7FF25A15DD10066579C /* Feeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

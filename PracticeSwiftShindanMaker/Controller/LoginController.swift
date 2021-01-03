@@ -66,8 +66,6 @@ class LoginController: UIViewController {
                     
                     //画面遷移
                     self.navigationController?.pushViewController(viewVC, animated: true)
-                    
-        
             }
         })
     }

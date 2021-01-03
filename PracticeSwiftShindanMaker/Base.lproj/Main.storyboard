@@ -64,6 +64,9 @@
                                 <state key="normal" title="Twitterでシェア">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="TwitterShare:" destination="u9u-oT-5ho" eventType="touchUpInside" id="RrI-AS-0Xp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3V1-UD-i4h">
                                 <rect key="frame" x="43" y="550" width="295" height="46"/>
@@ -73,6 +76,9 @@
                                 <state key="normal" title="アプリ内でシェア">
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="TLShare:" destination="u9u-oT-5ho" eventType="touchUpInside" id="YP5-zu-kYu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JO-O8-Fj6">
                                 <rect key="frame" x="107" y="347" width="161" height="55"/>
@@ -82,7 +88,8 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IZT-SA-RLo" kind="presentation" modalPresentationStyle="fullScreen" id="uWd-HP-lgn"/>
+                                    <action selector="gotoFeedVC:" destination="u9u-oT-5ho" eventType="touchUpInside" id="tiC-sA-kmk"/>
+                                    <segue destination="IZT-SA-RLo" kind="presentation" identifier="feedVC" modalPresentationStyle="fullScreen" id="uWd-HP-lgn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLi-LB-ND1">
@@ -106,6 +113,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Qpj-SG-Mup"/>
                     <connections>
+                        <outlet property="goToFeed" destination="6JO-O8-Fj6" id="x8b-kC-c3I"/>
                         <outlet property="meigenLabel" destination="kcU-Ul-wtE" id="Xvj-yH-Wav"/>
                     </connections>
                 </viewController>
@@ -113,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="1904.8" y="84.107946026986511"/>
         </scene>
-        <!--View Controller-->
+        <!--Feed View Controller-->
         <scene sceneID="l0s-hb-HEF">
             <objects>
-                <viewController id="IZT-SA-RLo" sceneMemberID="viewController">
+                <viewController id="IZT-SA-RLo" customClass="FeedViewController" customModule="PracticeSwiftShindanMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dq2-b4-e6z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,7 +137,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="170" id="FBv-wR-eFi">
                                         <rect key="frame" x="0.0" y="28" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FBv-wR-eFi" id="blj-Cb-EOr">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FBv-wR-eFi" id="blj-Cb-EOr" customClass="FeedCell" customModule="PracticeSwiftShindanMaker" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
@@ -148,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZX3-4b-N5Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2608.8000000000002" y="83.208395802098963"/>
+            <point key="canvasLocation" x="2719" y="84"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SzS-Mg-I5e">

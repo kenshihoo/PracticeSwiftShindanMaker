@@ -15,12 +15,9 @@ class FeedCell: UITableViewCell {
     
     @IBOutlet weak var userNameLabel: UILabel!
     
-    
     @IBOutlet weak var quoteLabel: UILabel!
     
     @IBOutlet weak var topView: UIView!
-    
-    
     
     
     //セルが構築された際に呼ばれるメソッド
@@ -32,6 +29,7 @@ class FeedCell: UITableViewCell {
                 self.contentView.layer.masksToBounds = true
                 self.contentView.layer.cornerRadius = 10.0
                 
+                //セル自体のデザインを設定
                 self.layer.masksToBounds = false
                 self.layer.shadowOffset = CGSize(width: 2, height: 4)
                 self.layer.shadowRadius = 10.0
@@ -42,8 +40,6 @@ class FeedCell: UITableViewCell {
                 let randomDouble2 = CGFloat.random(in: 0.0...1.0)
                 let randomDouble3 = CGFloat.random(in: 0.0...1.0)
                 self.topView.backgroundColor = UIColor(red: randomDouble1, green: randomDouble2, blue: randomDouble3, alpha: 1.0)
-
-        
         // Initialization code
     }
 

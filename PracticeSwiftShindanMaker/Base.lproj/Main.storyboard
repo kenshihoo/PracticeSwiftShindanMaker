@@ -44,7 +44,7 @@
         <!--View Controller-->
         <scene sceneID="1m9-gh-ZSv">
             <objects>
-                <viewController storyboardIdentifier="ViewVCId" id="u9u-oT-5ho" customClass="ViewController" customModule="PracticeSwiftShindanMaker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewVCId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u9u-oT-5ho" customClass="ViewController" customModule="PracticeSwiftShindanMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bBe-x3-f2n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,6 +148,9 @@
                                 <rect key="frame" x="148" y="572" width="79" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="close"/>
+                                <connections>
+                                    <action selector="back:" destination="IZT-SA-RLo" eventType="touchUpInside" id="lKB-W8-PHa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Csj-x0-QFX"/>

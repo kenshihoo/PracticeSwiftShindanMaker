@@ -33,13 +33,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //カスタムセルを作る
         tableView.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: "feedCell")
-        
         tableView.separatorStyle = .none
+        
+        
+        loadData()
     }
     
     func loadData()  {
         //firestoreに保存された投稿データを受信
-        db.collection("feed").order(by:"createAt").addSnapshotListener{(snapShot,error) in
+        db.collection("feed").order(by:"createdAt").addSnapshotListener{(snapShot,error) in
             
             
             self.feeds = []
@@ -75,6 +77,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
+    
+    @IBAction func back(_ sender: Any) {
+        //モーダルを解除して画面を戻る呪文
+         dismiss(animated: true, completion: nil)
+        
+        interactiveTransition.finish()
+    }
+    
     //作成必要なセルの数をカウント
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feeds.count
@@ -85,12 +95,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell",for: indexPath) as! FeedCell
         
-        cell.userNameLabel.text = "\(feeds[indexPath.row].userName)さんを表す名言"
-        cell.quoteLabel.text = feeds[indexPath.row].quote
+//        cell.userNameLabel.text = "\(feeds[indexPath.row].userName)さんを表す名言"
+        cell.quoteLabel.text = "\(feeds[indexPath.row].userName)さんを表す名言" + "\n" + feeds[indexPath.row].quote
+        
         cell.profileImageView.sd_setImage(with: URL(string: feeds[indexPath.row].profileURL), completed: nil)
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        tableView.estimatedRowHeight = 100
+        return UITableView.automaticDimension
+    }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

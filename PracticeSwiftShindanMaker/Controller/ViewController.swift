@@ -156,6 +156,9 @@ class ViewController: UIViewController,
     @IBAction func logout(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         
+        //画面遷移を戻る呪文(モーダルじゃないからdismiss使わない)
+        self.navigationController?.popViewController(animated: true)
+        
         do{
             try firebaseAuth.signOut()
         } catch let error as NSError{

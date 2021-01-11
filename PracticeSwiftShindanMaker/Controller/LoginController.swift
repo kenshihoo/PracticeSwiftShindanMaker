@@ -40,7 +40,9 @@ class LoginController: UIViewController {
         
         //ログインの設定
         provider?.getCredentialWith(nil, completion: {(credential,error)in
+            
             //ActivityIndicatorView(レーディング時のアニメーション)の設定をする(https://github.com/ninjaprox/NVActivityIndicatorView)
+            
             let activityView = NVActivityIndicatorView(frame: self.view.bounds,type: .lineSpinFadeLoader,color:.gray,padding: .none)
             
                 //activityViewをviewに追加
